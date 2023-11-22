@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+     <head>
+	     <title>تفقيط الأرقام</title>
+		 <link rel="icon" type="image/png" href="Untitled.png">
+		 <link rel="stylesheet" href="bootstrap.min.css">
+		
+		 <script src="bootstrap.min.js"></script>
+		 <script src="jquery.js"></script>
+		 <script src="Tafqeet.js"></script>
+<script>
+            function main (){
+			var a = document.getElementById("txt").value
+			if ( a > 0){
+			    var fraction = document.getElementById("txt").value.split(".");
+                               
+                if (fraction.length == 2)
+				{
+				var value1 = tafqeet (fraction[0])+ " جنيهاً و ";
+				var value2 = tafqeet (fraction[1])+ " قرشاً ";
+				var value = value1 + value2
+				    if (value1 == "صفر جنيهاً و ")
+				    {
+				     value = value2
+				    }
+					else if(value2 == "صفر قرشاً ")
+					{
+					value1 = tafqeet (fraction[0])+" جنيهاً"
+					value = value1
+					}
+                    document.getElementById ("demo").innerHTML =  value ;
+                }
+              /**  else if (fraction.length == 1)
+				{
+				var s =tafqeet (fraction[0])+" جنيهاً "
+				var a = ""
+				var b = s
+				if ( s == " جنيهاً ")
+				{
+				b = a
+				}
+				
+                    document.getElementById ("demo").innerHTML = b ;
+                }**/
+				
+				
+            }
+			}
+        </script>
+        <script>
+                function setTwoNumberDecimal(el) {
+        el.value = parseFloat(el.value).toFixed(2);
+    };
+        </script>		
+		<style>
+        .logo-image{
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-top: -6px;
+    }
+    img {
+   
+	display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+    
+        </style>
+     </head>
+	 
+	 
+	 <body>
+	 
+	<nav class="navbar na<nav class= navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+  
+    <a class="navbar-brand"  href="#">
+	<div class="logo-image">
+            <img src="Untitled.png" class="img-fluid">
+			
+      </div>
+	
+	</a>
+	<a class="navbar-brand"  href="#">
+	تفقيط الأرقام
+	</a>
+    <!--button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-house-door-fill"></i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+  <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/>
+</svg>الرئيسية</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">الذهاب إلى</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            الحسابات
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">الحساب</a></li>
+            <li><a class="dropdown-item" href="#">الحساب 2</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">حسابات أخرى</a></li>
+          </ul>
+        </li-->
+        <!--li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </li-->
+      <!--/ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div-->
+  </div>
+</nav>
+ <div class= "container-fluid">
+<img src="Untitled.png" alt="elkholy" width="25%" >
+
+                    <div>
+					
+					<div class="col text-center">
+						<h2>أكتب رقم لتحويله نص</h2>
+                    </div>
+					<br/>
+                        <input type = "number" class="form-control" onchange="" onkeydown="" id = "txt" max = "99999999999999" step="0.25" value ="0.00" />
+						<br/>
+						<div class="col text-center">
+						<button class="btn btn-primary"id = "submit" onclick="main()" value = "تفقيط">
+						إضغط للتحويل
+						</button>
+					    </div>
+						
+						<br/>
+						<div class="col text-center">
+						 <h2 id="demo"></h2>
+                        </div>
+					
+					
+                    
+				    </div>	
+					<br/>
+					<footer >
+<!--div class="container-login100-form-btn p-t-10">
+تصميم وبرمجة / محمد الخولي
+</div>
+</footer-->
+
+	 </body>
+	  </div>
+</html>
